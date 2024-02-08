@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The unique identifier of the bid request."
+    },
+    "bid": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "campaignId": {
+          "type": "string",
+          "description": "The campaign id."
+        },
+        "price": {
+          "type": "number",
+          "description": "The bid price."
+        },
+        "adm": {
+          "type": "string",
+          "description": "The ad markup."
+        }
+      },
+      "required": [
+        "campaignId",
+        "price",
+        "adm"
+      ],
+      "description": "Information about the bid."
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

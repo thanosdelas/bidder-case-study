@@ -1,0 +1,21 @@
+# suite config
+suites:
+  api:
+    actor: ApiTester
+    path: .
+    modules:
+      enabled:
+        - REST:
+          # url: localhost:8888
+          url: http://localhost/tdg/bidder/public/
+          depends: PhpBrowser
+
+paths:
+  tests: api-tests
+  output: api-tests/_output
+  data: api-tests/_data
+  support: api-tests/_support
+
+settings:
+  shuffle: false
+  lint: true

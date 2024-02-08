@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The unique identifier of the bid request."
+    },
+    "app": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The app unique identifier."
+        },
+        "name": {
+          "type": "string",
+          "description": "The app name."
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "description": "Details about the app where the traffic is coming from."
+    },
+    "device": {
+      "type": "object",
+      "properties": {
+        "os": {
+          "type": "string",
+          "enum": [
+            "Android",
+            "iOS"
+          ],
+          "description": "Device operating system"
+        },
+        "geo": {
+          "type": "object",
+          "properties": {
+            "country": {
+              "type": "string",
+              "description": "Country code using ISO-3166-1-alpha-3."
+            },
+            "lat": {
+              "type": "number",
+              "description": "Latitude from 90.0 to +90.0, where negative is south."
+            },
+            "lon": {
+              "type": "number",
+              "description": "Longitude from 180.0 to +180.0, where negative is west."
+            }
+          },
+          "required": [
+            "country"
+          ],
+          "description": "Location of the device assumed to be the user’s current location."
+        }
+      },
+      "required": [
+        "os",
+        "geo"
+      ],
+      "description": "Details about the user’s device to which the impression will be delivered."
+    }
+  },
+  "required": [
+    "id",
+    "app",
+    "device"
+  ]
+}
