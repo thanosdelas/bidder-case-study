@@ -2,7 +2,7 @@
 
 Bidder Case Study app was developed and tested on Linux Debian 10 "buster" with php7.3 and apache2.4 web server.
 
-# Code structure
+### Code structure
 
 - App root folder contains 'config.php' file with application configuration options.
 - Application entry point is in 'pulbic/index.php' which initiates slim framework.
@@ -43,7 +43,7 @@ Navigate to app root folder
 composer install
 ```
 
-# Web server
+### Web server
 
 To run a php web server navigate to public folder and issue:
 ```
@@ -52,13 +52,13 @@ php -S localhost:8888
 Or configure apache2 with app public folder.
 
 
-## To run unit tests
+### To run unit tests
 ```
 ./vendor/bin/phpunit unit-tests
 ./vendor/bin/phpunit --testdox unit-tests
 ```
 
-## To run api end-to-end test cases
+### To run api end-to-end test cases
 
 Set app api url according to server running:
 
